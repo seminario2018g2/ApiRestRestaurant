@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const usuariosRouter = require('./routes/api/usuarios');
-const restaurantesRouter = require('./routes/api/restaurantes');
+//var usersRouter = require('./routes/users');
+var usuariosRouter = require('./routes/api/usuarios');
+var restaurantesRouter = require('./routes/api/restaurantes');
 
 
 
@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/restaurantes', restaurantesRouter);
 
@@ -44,7 +44,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
 var port = 7777;
 app.listen(port, () => {
   console.log("server running in" + port);
