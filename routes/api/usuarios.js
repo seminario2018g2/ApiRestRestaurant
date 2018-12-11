@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+
+
 const Usuario = require('../../database/collections/usuario');
 /*
 
@@ -57,7 +59,7 @@ router.get('/', function (req, res, next) {
     })
 
 });
-
+// /login
 router.post('/signup', function (req, res, next) {
 
     const datos = {
