@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://172.17.0.1:27017/restaurant", {
-    useNewUrlParser: true
-}).then(() => {
-    console.log('conexion a mongodb exitosa');
-}).catch(err => {
-    console.log('Error en la conexion', err);
-});
+mongoose.connect('mongodb://192.168.1.105:27017/Restaurante', (err, res) =>{
+    if(err) throw err
+    console.log('Conexion a la base de datos establecida')
+})
+
+
 module.exports = mongoose;
